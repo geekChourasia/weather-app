@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const [query, setQuery] = useState({ q: "berlin" });
+  const [query, setQuery] = useState({ q: "ranchi" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
@@ -51,8 +51,10 @@ function App() {
         <div>
           <TimeAndLocation weather={weather} />
           <TemperatureAndDetails weather={weather} />
+          <Forecast title="hourly forecast" items={weather.hourly} />
 
           <Forecast title="daily forecast" items={weather.daily} />
+
         </div>
       )}
 
